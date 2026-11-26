@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { X, ShieldCheck, Mail, Lock, User, Phone, CheckCircle2, ArrowRight, RefreshCw, AlertCircle } from "lucide-react";
+import Image from "next/image";
+import { X, Mail, Lock, User, Phone, CheckCircle2, ArrowRight, RefreshCw, AlertCircle } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 
 export default function AuthModal() {
@@ -104,9 +105,14 @@ function AuthModalContent({ initialMode }: { initialMode: "signin" | "signup" | 
         </button>
 
         {/* Modal Brand Badge */}
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-8 h-8 rounded-xl bg-[var(--accent-soft)] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--accent-gold)]">
-            <ShieldCheck className="w-4 h-4" />
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-11 h-11 rounded-full relative overflow-hidden flex-shrink-0 drop-shadow-[0_2px_8px_rgba(212,175,99,0.5)]">
+            <Image
+              src="/images/royal12/royal12-logo.png"
+              alt="Royal 12 Limo"
+              fill
+              className="object-contain"
+            />
           </div>
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--accent-gold)]">

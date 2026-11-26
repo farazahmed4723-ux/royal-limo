@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[var(--border-subtle)]">
           {/* Brand Info Left */}
           <div className="lg:col-span-4 space-y-4 text-left">
-            <Royal12Logo />
+            <Royal12Logo size="lg" />
 
             <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed pt-2">
               First-class executive limousine & black SUV transportation across Toronto and the GTA.
