@@ -174,9 +174,9 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
       </div>
 
       {/* TOP SKY AREA: Open Headline, Value Proposition & Direct Contact (Above Jet & Suburban) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-2 sm:pt-4">
-        {/* High-Contrast Frosted Glass Canopy Card: 100% crystal-clear readability across both Day and Night modes */}
-        <div className="max-w-3xl rounded-3xl bg-black/75 sm:bg-black/60 backdrop-blur-xl p-5 sm:p-8 border border-[#F5A623]/40 shadow-2xl shadow-black/90 space-y-4 text-left ring-1 ring-white/10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-1 sm:pt-3">
+        {/* Ultra-Transparent Sheer Floating Canopy: 100% unobstructed view of private jet airplane and suburban */}
+        <div className="max-w-4xl lg:max-w-5xl rounded-3xl p-2 sm:p-5 space-y-3 sm:space-y-3.5 text-left bg-transparent backdrop-blur-none border-none shadow-none">
           {/* Pill Badge */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -221,7 +221,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.24, ease: "easeOut" }}
-            className="text-xs sm:text-sm lg:text-base text-[#E2E8F0] max-w-xl leading-relaxed font-normal drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            className="text-xs sm:text-sm lg:text-base text-[#E2E8F0] max-w-2xl leading-relaxed font-normal drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
           >
             Toronto and GTA&apos;s premier black car chauffeur service. 24/7 Round-the-Clock Dispatch
             featuring all-black Chevrolet Suburban, GMC Yukon Denali &amp; Cadillac Escalade SUVs plus private FBO aviation transfers.
@@ -232,12 +232,12 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-wrap items-center gap-3 pt-2"
+            className="flex flex-wrap lg:flex-nowrap items-center gap-3 pt-1.5"
           >
             {/* 1. Book a Ride CTA Button */}
             <a
               href="#booking-bar"
-              className="px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest bg-gradient-to-r from-[#F5A623] via-[#FFB733] to-[#E5982A] text-black inline-flex items-center gap-2 shadow-xl shadow-[#F5A623]/40 hover:shadow-[#F5A623]/60 hover:brightness-110 active:scale-95 transition-all cursor-pointer ring-2 ring-[#FFD27D]/50"
+              className="px-6 py-3 sm:px-7 sm:py-3.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest bg-gradient-to-r from-[#F5A623] via-[#FFB733] to-[#E5982A] text-black inline-flex items-center gap-2 shadow-xl shadow-[#F5A623]/40 hover:shadow-[#F5A623]/60 hover:brightness-110 active:scale-95 transition-all cursor-pointer ring-2 ring-[#FFD27D]/50 whitespace-nowrap"
             >
               <span className="text-black font-black">Book a Ride</span>
               <ArrowRight className="w-4 h-4 text-black" />
@@ -246,7 +246,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
             {/* 2. Direct 24/7 Dispatch Phone Call Button */}
             <a
               href="tel:+14372149283"
-              className="px-5 py-3 sm:px-6 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider bg-black/90 hover:bg-black border-2 border-[#F5A623] text-white hover:text-[#F5A623] inline-flex items-center gap-2.5 backdrop-blur-md shadow-lg shadow-black/80 hover:shadow-[#F5A623]/30 active:scale-95 transition-all ring-1 ring-white/10"
+              className="px-5 py-3 sm:px-6 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider bg-black/90 hover:bg-black border-2 border-[#F5A623] text-white hover:text-[#F5A623] inline-flex items-center gap-2.5 backdrop-blur-md shadow-lg shadow-black/80 hover:shadow-[#F5A623]/30 active:scale-95 transition-all ring-1 ring-white/10 whitespace-nowrap"
             >
               <Phone className="w-4 h-4 text-[#F5A623] flex-shrink-0 animate-pulse" />
               <span className="text-white font-bold tracking-wide">
@@ -257,7 +257,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
             {/* 3. Explore 3-SUV Black Fleet Badge Button */}
             <Link
               href="/#fleet"
-              className="px-5 py-3 sm:px-6 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-white/15 hover:bg-white/25 border border-white/35 hover:border-[#F5A623] text-white hover:text-[#F5A623] inline-flex items-center gap-2 backdrop-blur-md shadow-md active:scale-95 transition-all group ring-1 ring-white/10"
+              className="px-5 py-3 sm:px-6 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide bg-white/15 hover:bg-white/25 border border-white/35 hover:border-[#F5A623] text-white hover:text-[#F5A623] inline-flex items-center gap-2 backdrop-blur-md shadow-md active:scale-95 transition-all group ring-1 ring-white/10 whitespace-nowrap"
             >
               <Car className="w-4 h-4 text-[#F5A623] flex-shrink-0" />
               <span className="text-white group-hover:text-[#F5A623] transition-colors font-medium">
