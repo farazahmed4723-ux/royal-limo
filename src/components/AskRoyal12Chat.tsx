@@ -19,28 +19,33 @@ interface Message {
   };
 }
 
-function GmailLogo({ className = "w-4 h-4" }: { className?: string }) {
+function GmailLogo({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Top Red Envelope Flap */}
       <path
-        d="M2 6C2 4.89543 2.89543 4 4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6Z"
-        fill="#1E293B"
-      />
-      <path
-        d="M20 4H4C2.89543 4 2 4.89543 2 6V7.5L12 13.5L22 7.5V6C22 4.89543 21.1046 4 20 4Z"
+        d="M20 4H4C2.89543 4 2 4.89543 2 6V7.25L12 14.25L22 7.25V6C22 4.89543 21.1046 4 20 4Z"
         fill="#EA4335"
       />
+      {/* Left Blue Pillar */}
       <path
-        d="M2 7.5V18C2 19.1046 2.89543 20 4 20H8V11.5L2 7.5Z"
+        d="M2 7.25V18C2 19.1046 2.89543 20 4 20H6.5V11.1L2 7.25Z"
         fill="#4285F4"
       />
+      {/* Right Green Pillar */}
       <path
-        d="M22 7.5V18C22 19.1046 21.1046 20 20 20H16V11.5L22 7.5Z"
+        d="M22 7.25V18C22 19.1046 21.1046 20 20 20H17.5V11.1L22 7.25Z"
         fill="#34A853"
       />
+      {/* Center Amber/Yellow Bottom */}
       <path
-        d="M8 20H16V11.5L12 14L8 11.5V20Z"
+        d="M6.5 20H17.5V11.1L12 14.95L6.5 11.1V20Z"
         fill="#FBBC04"
+      />
+      {/* Center Crimson Fold Accent */}
+      <path
+        d="M6.5 11.1L12 14.95L17.5 11.1V7.5L12 11.35L6.5 7.5V11.1Z"
+        fill="#C5221F"
       />
     </svg>
   );
@@ -48,8 +53,16 @@ function GmailLogo({ className = "w-4 h-4" }: { className?: string }) {
 
 function WhatsAppLogo({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12.012 2C6.486 2 2 6.48 2 12c0 1.83.497 3.548 1.363 5.027L2 22l5.122-1.34A9.946 9.946 0 0012.012 22c5.523 0 10.009-4.48 10.009-10S17.535 2 12.012 2zm5.834 14.18c-.244.685-1.42 1.31-1.954 1.392-.515.078-1.187.11-1.907-.12-.435-.139-.99-.323-1.708-.635-3.003-1.3-4.965-4.32-5.115-4.52-.15-.2-1.22-1.624-1.22-3.097 0-1.474.774-2.197 1.05-2.496.273-.3.597-.375.797-.375.2 0 .399.002.573.01.185.01.431-.07.674.515.249.6.85 2.074.925 2.224.075.15.125.324.025.524-.1.2-.15.324-.3.5-.15.174-.316.39-.45.524-.15.15-.306.312-.132.612.174.3 1.777 2.924 3.82 4.743.682.608 1.258.8 1.683.974.425.174.811.15 1.115.105.34-.05 1.05-.43 1.2-.846.15-.417.15-.774.105-.849-.045-.075-.17-.12-.37-.22z" />
+    <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Official WhatsApp Emerald Green Badge */}
+      <circle cx="16" cy="16" r="15" fill="#25D366" />
+      {/* Crisp White Handset & Speech Bubble */}
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M16 6.5C10.753 6.5 6.5 10.753 6.5 16C6.5 17.822 7.012 19.526 7.897 20.978L7 25L11.233 23.89C12.632 24.717 14.264 25.197 16 25.197C21.247 25.197 25.5 20.944 25.5 15.697C25.5 10.45 21.247 6.5 16 6.5ZM13.435 11.469C13.226 10.983 13.026 10.964 12.817 10.954C12.645 10.945 12.445 10.945 12.255 10.945C12.055 10.945 11.731 11.021 11.465 11.307C11.198 11.602 10.437 12.326 10.437 13.802C10.437 15.278 11.512 16.706 11.664 16.906C11.816 17.106 13.748 20.239 16.794 21.43C19.336 22.42 19.85 22.22 20.402 22.172C20.954 22.125 22.182 21.448 22.439 20.744C22.696 20.039 22.696 19.439 22.62 19.315C22.544 19.191 22.344 19.115 22.049 18.972C21.754 18.829 20.278 18.096 20.002 17.991C19.726 17.886 19.526 17.839 19.326 18.134C19.126 18.439 18.555 19.115 18.384 19.315C18.212 19.515 18.041 19.534 17.746 19.391C17.451 19.248 16.498 18.934 15.345 17.905C14.45 17.105 13.84 16.115 13.669 15.82C13.488 15.515 13.65 15.353 13.8 15.201C13.933 15.068 14.105 14.849 14.248 14.677C14.4 14.496 14.448 14.373 14.543 14.173C14.648 13.963 14.6 13.792 14.524 13.64C14.448 13.497 13.877 12.078 13.435 11.469Z"
+        fill="white"
+      />
     </svg>
   );
 }
@@ -399,11 +412,11 @@ export default function AskRoyal12Chat() {
               href="https://wa.me/14372149283?text=Hello%20Royal%20Twelve%20Limo%2C%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20chauffeur%20booking."
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#0E1F18] border border-[#25D366]/40 hover:border-[#25D366] hover:bg-[#25D366] text-[#25D366] hover:text-white shadow-md hover:shadow-[0_0_15px_rgba(37,211,102,0.4)] transition-all hover:scale-105"
+              className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#0E1F18] border border-[#25D366]/40 hover:border-[#25D366] hover:bg-[#25D366]/20 text-[#25D366] shadow-md hover:shadow-[0_0_15px_rgba(37,211,102,0.4)] transition-all hover:scale-105"
               title="WhatsApp (+1 437 214-9283)"
               aria-label="Chat on WhatsApp"
             >
-              <WhatsAppLogo className="w-5 h-5 transition-transform group-hover:scale-110" />
+              <WhatsAppLogo className="w-6 h-6 transition-transform group-hover:scale-110 drop-shadow-sm" />
               <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/90 px-2.5 py-1 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-lg">
                 WhatsApp Chat
               </span>

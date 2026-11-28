@@ -395,7 +395,8 @@ html.light-mode #hero-booking-console,
 html[data-theme="day"] .booking-console-container,
 html.day .booking-console-container,
 html.light-mode .booking-console-container {
-  background-color: rgba(255, 255, 255, 0.94) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  background-color: rgba(255, 255, 255, 0.96) !important;
   border-color: rgba(179, 142, 56, 0.45) !important;
   box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.2), 0 0 25px rgba(179, 142, 56, 0.18) !important;
   color: #0F172A !important;
@@ -462,24 +463,42 @@ html.light-mode .booking-sub-strip {
    SUB-STRIP CONTROLS (NIGHT MODE DEFAULT & DAY MODE ADAPTATION)
    ========================================================================= */
 .booking-vehicle-select {
-  background-color: #0A1628;
-  color: #F8FAFC;
-  border: 1px solid rgba(245, 166, 35, 0.4);
+  background-color: #0A1628 !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(245, 166, 35, 0.4) !important;
 }
 .booking-vehicle-select option {
-  background-color: #0A1628;
-  color: #F8FAFC;
+  background-color: #0A1628 !important;
+  color: #F8FAFC !important;
 }
 
 .booking-date-input,
 .booking-time-input {
-  background-color: transparent;
-  color: #F8FAFC;
-  border: 1px solid transparent;
+  color-scheme: dark !important;
+  background-color: #0A1628 !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(245, 166, 35, 0.4) !important;
+  border-radius: 8px !important;
+  padding: 3px 8px !important;
 }
+.booking-date-input::-webkit-datetime-edit,
+.booking-time-input::-webkit-datetime-edit,
+.booking-date-input::-webkit-datetime-edit-fields-wrapper,
+.booking-time-input::-webkit-datetime-edit-fields-wrapper,
+.booking-date-input::-webkit-datetime-edit-text,
+.booking-time-input::-webkit-datetime-edit-text,
+.booking-date-input::-webkit-datetime-edit-month-field,
+.booking-time-input::-webkit-datetime-edit-month-field,
+.booking-date-input::-webkit-datetime-edit-day-field,
+.booking-time-input::-webkit-datetime-edit-day-field,
+.booking-date-input::-webkit-datetime-edit-year-field,
+.booking-time-input::-webkit-datetime-edit-year-field {
+  color: #F8FAFC !important;
+}
+
 .booking-date-input:hover,
 .booking-time-input:hover {
-  border-color: rgba(245, 166, 35, 0.3);
+  border-color: rgba(245, 166, 35, 0.6) !important;
 }
 
 /* Date and Time Inputs in Sub-strip (Day Mode) */
@@ -495,12 +514,56 @@ html.light-mode #hero-booking-console .booking-date-input,
 html[data-theme="day"] #hero-booking-console .booking-time-input,
 html.day #hero-booking-console .booking-time-input,
 html.light-mode #hero-booking-console .booking-time-input {
+  color-scheme: light !important;
   background-color: #FFFFFF !important;
   color: #0F172A !important;
-  border: 1.5px solid rgba(179, 142, 56, 0.45) !important;
+  border: 1.5px solid rgba(179, 142, 56, 0.5) !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
   border-radius: 8px !important;
   padding: 3px 8px !important;
+}
+
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit,
+html.day .booking-date-input::-webkit-datetime-edit,
+html.day .booking-time-input::-webkit-datetime-edit,
+html.light-mode .booking-date-input::-webkit-datetime-edit,
+html.light-mode .booking-time-input::-webkit-datetime-edit,
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-text,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-text,
+html.day .booking-date-input::-webkit-datetime-edit-text,
+html.day .booking-time-input::-webkit-datetime-edit-text,
+html.light-mode .booking-date-input::-webkit-datetime-edit-text,
+html.light-mode .booking-time-input::-webkit-datetime-edit-text,
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-month-field,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-month-field,
+html.day .booking-date-input::-webkit-datetime-edit-month-field,
+html.day .booking-time-input::-webkit-datetime-edit-month-field,
+html.light-mode .booking-date-input::-webkit-datetime-edit-month-field,
+html.light-mode .booking-time-input::-webkit-datetime-edit-month-field,
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-day-field,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-day-field,
+html.day .booking-date-input::-webkit-datetime-edit-day-field,
+html.day .booking-time-input::-webkit-datetime-edit-day-field,
+html.light-mode .booking-date-input::-webkit-datetime-edit-day-field,
+html.light-mode .booking-time-input::-webkit-datetime-edit-day-field,
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-year-field,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-year-field,
+html.day .booking-date-input::-webkit-datetime-edit-year-field,
+html.day .booking-time-input::-webkit-datetime-edit-year-field,
+html.light-mode .booking-date-input::-webkit-datetime-edit-year-field,
+html.light-mode .booking-time-input::-webkit-datetime-edit-year-field {
+  color: #0F172A !important;
+}
+
+html[data-theme="day"] .booking-date-input::-webkit-calendar-picker-indicator,
+html[data-theme="day"] .booking-time-input::-webkit-calendar-picker-indicator,
+html.day .booking-date-input::-webkit-calendar-picker-indicator,
+html.day .booking-time-input::-webkit-calendar-picker-indicator,
+html.light-mode .booking-date-input::-webkit-calendar-picker-indicator,
+html.light-mode .booking-time-input::-webkit-calendar-picker-indicator {
+  filter: invert(0.2) !important;
+  cursor: pointer;
 }
 
 /* Vehicle Select in Sub-strip (Day Mode) */
