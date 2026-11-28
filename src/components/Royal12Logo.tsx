@@ -22,7 +22,7 @@ export default function Royal12Logo({
     <Link
       href="/"
       className={`inline-flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)] rounded-xl ${className}`}
-      aria-label="Royal 12 Limo Home"
+      aria-label="Royal Twelve Limo Home"
     >
       {/* Official Metallic Gold Circular Emblem */}
       <div
@@ -30,7 +30,7 @@ export default function Royal12Logo({
       >
         <Image
           src="/images/royal12/royal12-logo.png"
-          alt="Royal 12 Limo - Official Emblem"
+          alt="Royal Twelve Limo - Official Emblem"
           fill
           priority
           sizes="(max-width: 768px) 48px, 80px"
@@ -42,7 +42,7 @@ export default function Royal12Logo({
         <div className="flex flex-col text-left">
           <div className="flex items-center gap-1.5">
             <span className="font-display font-black text-lg md:text-xl tracking-wider text-[var(--text-primary)] group-hover:text-[var(--accent-gold)] transition-colors">
-              ROYAL 12
+              ROYAL TWELVE
             </span>
             <span className="text-xs md:text-sm font-bold tracking-widest text-[var(--accent-gold)] uppercase border-l border-[var(--accent-gold)]/40 pl-1.5">
               Limo

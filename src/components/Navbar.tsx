@@ -38,13 +38,16 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/#services" },
-    { label: "Fleet", href: "/#fleet" },
-    { label: "Why Royal 12", href: "/#why-us" },
-    { label: "About Us", href: "/#about" },
-    { label: "Service Areas", href: "/#service-areas" },
-    { label: "FAQ", href: "/#faq" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Mississauga Airport", href: "/mississauga-airport-limo/" },
+    { label: "Toronto Airport", href: "/airport-limo-toronto/" },
+    { label: "Wedding Limo", href: "/wedding-limo-mississauga/" },
+    { label: "Corporate", href: "/corporate-limo/" },
+    { label: "Hourly Chauffeur", href: "/hourly-chauffeur/" },
+    { label: "Fleet", href: "/fleet/" },
+    { label: "Rates", href: "/rates/" },
+    { label: "Service Areas", href: "/service-areas/" },
+    { label: "FAQ", href: "/faq/" },
+    { label: "Contact", href: "/contact/" },
   ];
 
   const currentCar = FLEET_CARS[activeCarIndex];
@@ -172,13 +175,13 @@ export default function Navbar() {
                 </div>
               </a>
 
-              {/* Book Now Button */}
+              {/* Get a Quote Button */}
               <Link
-                href="/#booking-bar"
+                href="/get-a-quote/"
                 className="hidden sm:inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider gold-button shadow-lg shadow-[#D4AF63]/20"
               >
                 <Calendar className="w-3.5 h-3.5" />
-                <span>Book Now</span>
+                <span>Get a Quote</span>
               </Link>
 
               {/* Mobile Hamburger Toggle */}
@@ -336,11 +339,11 @@ export default function Navbar() {
               </a>
 
               <Link
-                href="/#booking-bar"
+                href="/get-a-quote/"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full inline-flex items-center justify-center py-3 rounded-xl text-center text-xs font-semibold uppercase tracking-wider gold-button shadow-lg shadow-[#D4AF63]/25 cursor-pointer"
               >
-                Book Your Ride
+                Request a Quote
               </Link>
 
               <div className="flex items-center justify-center gap-2 text-[10px] text-[var(--text-secondary)] pt-1">

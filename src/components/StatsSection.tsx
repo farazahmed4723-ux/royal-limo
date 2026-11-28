@@ -79,7 +79,7 @@ export default function StatsSection() {
             <span>Executive Leadership & Proven Excellence</span>
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] mt-3">
-            About Royal 12 Limo
+            About Royal Twelve Limo
           </h2>
           <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-2">
             Founded and led by <strong>Sayed Kamran Ali</strong>, providing 2+ years of personalized, ultra-premium chauffeured black SUV service across Mississauga and the Greater Toronto Area.

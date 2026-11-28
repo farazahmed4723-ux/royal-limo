@@ -45,7 +45,7 @@ export default function FounderSection() {
             Meet Sayed Kamran Ali
           </h2>
           <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-2">
-            Owner, Founder &amp; Lead Chauffeur of Royal 12 Limo — Bringing 2+ years of personalized executive livery excellence across Mississauga and the Greater Toronto Area.
+            Owner, Founder &amp; Lead Chauffeur of Royal Twelve Limo — Bringing 2+ years of personalized executive livery excellence across Mississauga and the Greater Toronto Area.
           </p>
         </ScrollReveal>
 

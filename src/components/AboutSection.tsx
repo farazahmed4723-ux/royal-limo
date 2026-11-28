@@ -104,7 +104,7 @@ export default function AboutSection() {
           <ScrollReveal direction="right" distance={45} className="lg:col-span-7 space-y-6 text-left">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-[var(--accent-gold)]">
-                About Royal 12 Limo
+                About Royal Twelve Limo
               </span>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] mt-2">
                 Your Comfort, Our Priority.
@@ -145,14 +145,14 @@ export default function AboutSection() {
             </PopCard>
 
             <p className="text-sm sm:text-base text-[var(--text-primary)]/85 leading-relaxed">
-              Royal 12 Limo is a premier executive transportation and chauffeured black SUV service
+              Royal Twelve Limo is a premier executive transportation and chauffeured black SUV service
               headquartered in Mississauga, Ontario, proudly serving the Greater Toronto Area. Built
               around the foundational pillars of <strong>safety, discretion, and unwavering punctuality</strong>,
               we cater to discerning corporate executives, travelers, and VIP guests.
             </p>
 
             <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-              Unlike generic car services that dispatch unpredictable third-party vehicles, Royal 12
+              Unlike generic car services that dispatch unpredictable third-party vehicles, Royal Twelve Limo
               maintains a dedicated, pristine fleet of <strong>all-black Chevrolet Suburbans</strong>,
               providing spacious comfort for up to 6 passengers with generous luggage capacity.
               Every reservation is personally reviewed and confirmed by our manual dispatch team to guarantee flawless execution.

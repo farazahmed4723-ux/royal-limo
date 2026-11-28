@@ -4,32 +4,27 @@ import Royal12Logo from "./Royal12Logo";
 
 export default function Footer() {
   const serviceLinks = [
-    { label: "Airport Transfer", href: "/services/airport-transfers" },
-    { label: "Limousine Service", href: "/services/limousine-service" },
-    { label: "Chauffeur Service", href: "/services/private-chauffeur" },
-    { label: "Hourly Service", href: "/services/hourly-service" },
-    { label: "City to City", href: "/services/city-to-city" },
-    { label: "Corporate Travel", href: "/services/corporate-travel" },
-    { label: "Special Event", href: "/services/special-events" },
-    { label: "Point to Point", href: "/services/point-to-point" },
+    { label: "Mississauga Airport Limo", href: "/mississauga-airport-limo/" },
+    { label: "Toronto Airport Limo", href: "/airport-limo-toronto/" },
+    { label: "Wedding Limo Mississauga", href: "/wedding-limo-mississauga/" },
+    { label: "Corporate Limo", href: "/corporate-limo/" },
+    { label: "Hourly Chauffeur", href: "/hourly-chauffeur/" },
   ];
 
   const companyLinks = [
-    { label: "About Us", href: "/#about" },
-    { label: "Fleet (Chevrolet Suburban)", href: "/#fleet" },
-    { label: "How It Works", href: "/#how-it-works" },
-    { label: "Why Choose Us", href: "/#why-us" },
-    { label: "Service Areas", href: "/#service-areas" },
-    { label: "Contact Us", href: "/#contact" },
+    { label: "Executive Fleet", href: "/fleet/" },
+    { label: "Rates & Flat Pricing", href: "/rates/" },
+    { label: "Service Areas", href: "/service-areas/" },
+    { label: "Request a Flat Quote", href: "/get-a-quote/" },
+    { label: "Contact Us", href: "/contact/" },
   ];
 
   const supportLinks = [
-    { label: "Frequently Asked Questions", href: "/#faq" },
-    { label: "Booking Portal", href: "/#booking-quote-engine" },
-    { label: "Cancellation & Refund Policy", href: "/policies/cancellation" },
-    { label: "Terms and Conditions", href: "/policies/terms" },
-    { label: "Privacy Policy", href: "/policies/privacy" },
-    { label: "Admin Portal", href: "/admin" },
+    { label: "Frequently Asked Questions", href: "/faq/" },
+    { label: "Privacy Policy", href: "/privacy-policy/" },
+    { label: "Terms and Conditions", href: "/terms/" },
+    { label: "Cancellation & Refund Policy", href: "/policies/cancellation/" },
+    { label: "Admin Dispatch Portal", href: "/admin/" },
   ];
 
   return (
@@ -41,15 +36,14 @@ export default function Footer() {
             <Royal12Logo size="lg" />
 
             <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed pt-2">
-              First-class executive limousine & black SUV transportation across Toronto and the GTA.
-              Operating exclusively with our flagship Chevrolet Suburban fleet. Available 24/7 with
-              guaranteed flat pricing.
+              Royal Twelve Limo is Mississauga, Ontario&apos;s premier luxury limousine and chauffeur service.
+              Operating exclusively with our confirmed black SUV fleet: Chevrolet Suburban Premier, GMC Yukon Denali &amp; Cadillac Escalade ESV. Available 24/7 with guaranteed flat rates.
             </p>
 
             {/* 24/7 Round-the-clock service badge matching screenshot 6 */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--bg-secondary)] border border-emerald-500/30 text-xs font-medium text-emerald-500 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>24/7 Round-the-Clock Service</span>
+              <span>24/7 Dedicated Dispatch</span>
             </div>
 
             {/* Direct Contact */}
@@ -68,7 +62,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-[var(--text-secondary)]">
                 <MapPin className="w-3.5 h-3.5 text-[var(--accent-gold)]" />
-                <span>Mississauga, Ontario, Canada (Servicing the GTA)</span>
+                <span>Serving Mississauga and the GTA</span>
               </div>
             </div>
           </div>
@@ -76,7 +70,7 @@ export default function Footer() {
           {/* Column 1: Services */}
           <div className="lg:col-span-3 text-left">
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[var(--text-primary)] mb-4">
-              Our Services
+              Limo Services
             </h4>
             <ul className="space-y-2.5 text-xs">
               {serviceLinks.map((link) => (
@@ -95,7 +89,7 @@ export default function Footer() {
           {/* Column 2: Company */}
           <div className="lg:col-span-2 text-left">
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[var(--text-primary)] mb-4">
-              Company
+              Fleet &amp; Company
             </h4>
             <ul className="space-y-2.5 text-xs">
               {companyLinks.map((link) => (
@@ -130,14 +124,14 @@ export default function Footer() {
             </ul>
 
             <div className="mt-6 p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[11px] text-[var(--text-secondary)]">
-              <span className="text-[var(--accent-gold)] font-semibold">Cancellation Policy:</span> Under 24h = 30% non-refundable, 70% refundable.
+              <span className="text-[var(--accent-gold)] font-semibold">Price Policy:</span> Price confirmed by quote before you book.
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-secondary)]">
-          <p>© 2026 Royal 12 Limo. All rights reserved.</p>
+          <p>© 2026 Royal Twelve Limo. All rights reserved.</p>
           <div className="flex items-center gap-4 text-[11px]">
             <span>Premium • Safe • Reliable</span>
             <span>•</span>

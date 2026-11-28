@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -29,10 +30,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Royal 12 Limo | Luxury Limousine & Black Suburban Service Toronto & GTA",
+  title: "Limo Service Mississauga | Airport, Wedding & Corporate Limo – Royal Twelve Limo",
   description:
-    "Royal 12 Limo provides premier executive limousine and black car transportation across Toronto and the GTA. Exclusively operating black Chevrolet Suburbans with guaranteed flat rates.",
+    "Royal Twelve Limo provides premier executive limousine & black SUV chauffeur services across Mississauga, Toronto & the GTA. 24/7 dispatch. Request a quote.",
   keywords: [
+    "Royal Twelve Limo",
     "Toronto limo service",
     "Mississauga limo service",
     "GTA limousine service",
@@ -44,16 +46,16 @@ export const metadata: Metadata = {
     "Private chauffeur Toronto",
     "Executive transportation GTA",
   ],
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://royal12.ca"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://royaltwelve.ca"),
   alternates: {
-    canonical: "/",
+    canonical: "https://royaltwelve.ca/",
   },
   openGraph: {
-    title: "Royal 12 Limo | Luxury Chauffeur & Executive SUV Service Toronto",
+    title: "Limo Service Mississauga | Airport, Wedding & Corporate Limo – Royal Twelve Limo",
     description:
-      "First-class executive limousine & black Chevrolet Suburban service across Toronto, Mississauga, and the GTA. 24/7 dedicated dispatch.",
-    url: "https://royal12.ca",
-    siteName: "Royal 12 Limo",
+      "First-class executive limousine & black SUV chauffeur service across Mississauga, Toronto, and the GTA. 24/7 dedicated dispatch.",
+    url: "https://royaltwelve.ca/",
+    siteName: "Royal Twelve Limo",
     locale: "en_CA",
     type: "website",
   },
@@ -70,10 +72,11 @@ export default function RootLayout({
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LimousineService",
-    name: "Royal 12 Limo",
+    "@type": "LocalBusiness",
+    name: "Royal Twelve Limo",
     telephone: "+14372149283",
     email: "royaltwelve.ca@gmail.com",
+    url: "https://royaltwelve.ca",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Mississauga",
@@ -81,25 +84,71 @@ export default function RootLayout({
       addressCountry: "CA",
     },
     areaServed: [
-      { "@type": "City", name: "Toronto" },
       { "@type": "City", name: "Mississauga" },
-      { "@type": "City", name: "Oakville" },
+      { "@type": "City", name: "Toronto" },
       { "@type": "City", name: "Brampton" },
-      { "@type": "AdministrativeArea", name: "Greater Toronto Area" },
+      { "@type": "City", name: "Oakville" },
+      { "@type": "City", name: "Vaughan" },
+      { "@type": "City", name: "Markham" },
+      { "@type": "City", name: "Burlington" },
+      { "@type": "City", name: "Milton" },
+      { "@type": "City", name: "Hamilton" },
+      { "@type": "Airport", name: "Toronto Pearson International Airport (YYZ)" },
+      { "@type": "Airport", name: "Billy Bishop Toronto City Airport (YTZ)" },
+      { "@type": "Airport", name: "John C. Munro Hamilton International Airport (YHM)" },
     ],
-    slogan: "Your Comfort, Our Priority",
-    priceRange: "$$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+      },
+    ],
     currenciesAccepted: "CAD",
-    paymentAccepted: "Credit Card, Debit Card, PayPal, Interac e-Transfer",
+    paymentAccepted: "Credit Card, Debit Card, Interac e-Transfer",
   };
+
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-XXXXXXXXXX";
 
   return (
     <html
-      lang="en"
+      lang="en-CA"
       suppressHydrationWarning
       className={`${montserrat.variable} ${jakarta.variable} scroll-smooth antialiased`}
     >
       <head>
+        {/* Google Analytics 4: [OWNER NEW GA4 ID] */}
+        {gaMeasurementId && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaMeasurementId}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
         <script
           id="theme-initializer"
           dangerouslySetInnerHTML={{

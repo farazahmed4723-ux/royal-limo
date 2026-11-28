@@ -190,16 +190,16 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
             </span>
           </motion.div>
 
-          {/* Grand Headline with Runway Amber Accent */}
+          {/* Grand Headline with Primary SEO Keyword & Brand */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]"
           >
-            Experience{" "}
+            Limo Service Mississauga &amp; Toronto –{" "}
             <span className="gold-gradient-text drop-shadow-[0_2px_24px_rgba(245,166,35,0.6)]">
-              Luxury on Wheels.
+              Royal Twelve Limo
             </span>
           </motion.h1>
 

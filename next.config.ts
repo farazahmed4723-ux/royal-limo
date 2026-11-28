@@ -3,6 +3,7 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  trailingSlash: true,
   cacheComponents: true,
   partialPrefetching: true,
   outputFileTracingRoot: path.resolve(__dirname),
