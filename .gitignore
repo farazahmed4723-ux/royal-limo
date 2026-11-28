@@ -32,9 +32,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (allow production env for Vercel automation)
 .env*
 !.env.example
+!.env.production
 
 # scratch scripts and temp files
 scratch/

@@ -8,6 +8,7 @@ import CursorFollower from "@/components/CursorFollower";
 import AskRoyal12Chat from "@/components/AskRoyal12Chat";
 import { AuthProvider } from "@/context/AuthContext";
 import AuthModal from "@/components/AuthModal";
+import { Analytics } from "@vercel/analytics/next";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -196,6 +197,7 @@ export default function RootLayout({
           <AskRoyal12Chat />
           <AuthModal />
         </AuthProvider>
+        <Analytics />
       </body>
     </html>
   );
