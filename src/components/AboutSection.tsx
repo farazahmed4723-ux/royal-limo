@@ -3,100 +3,171 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, Award, Phone, Mail, ArrowRight } from "lucide-react";
+import { ShieldCheck, Award, Phone, Mail, ArrowRight, MapPin } from "lucide-react";
 import ScrollReveal, { PopCard, FloatingPopBadge, StaggerContainer, PopItem } from "./ScrollReveal";
+
+const CITY_WALLPAPERS = [
+  {
+    city: "Toronto Skyline",
+    image: "/images/royal12/toronto-skyline-hero.jpg",
+    alt: "Toronto Downtown & CN Tower Luxury Night Skyline",
+  },
+  {
+    city: "Calgary Downtown",
+    image: "/images/royal12/calgary-skyline-luxury.jpg",
+    alt: "Calgary Tower & Bow River Luxury Twilight Skyline",
+  },
+  {
+    city: "Mississauga & GTA",
+    image: "/images/royal12/mississauga-gta-night.jpg",
+    alt: "Mississauga & Greater Toronto Area Luxury Night Skyline",
+  },
+  {
+    city: "Toronto Waterfront",
+    image: "/images/royal12/fairmont-royal-york-night.jpg",
+    alt: "Toronto Waterfront Executive Dusk Skyline",
+  },
+];
 
 const FLEET_CARS = [
   {
     name: "Black Chevrolet Suburban Premier",
     brand: "Chevrolet",
-    badge: "100% Jet Black Suburban",
-    image: "/images/royal12/fleet-suburban-black.jpg",
+    badge: "Executive SUV • 6 Pax",
+    image: "/images/royal12/live-suburban-toronto.jpg",
   },
   {
     name: "Black GMC Yukon Denali",
     brand: "GMC",
-    badge: "100% Jet Black Yukon Denali",
-    image: "/images/royal12/fleet-gmc-yukon-denali.jpg",
+    badge: "Denali Reserve • 6 Pax",
+    image: "/images/royal12/live-yukon-denali-night.jpg",
   },
   {
     name: "Black Cadillac Escalade ESV",
     brand: "Cadillac",
-    badge: "100% Jet Black Escalade ESV",
-    image: "/images/royal12/fleet-cadillac-escalade.jpg",
+    badge: "Prestige VIP • 6 Pax",
+    image: "/images/royal12/live-escalade-esv-vip.jpg",
   },
 ];
 
 export default function AboutSection() {
   const [carIndex, setCarIndex] = useState(0);
+  const [cityIndex, setCityIndex] = useState(0);
 
-  // Live 1-second vehicle rotation
+  // Smooth live vehicle rotation (every 2.5s)
   useEffect(() => {
-    const timer = setInterval(() => {
+    const carTimer = setInterval(() => {
       setCarIndex((prev) => (prev + 1) % FLEET_CARS.length);
-    }, 1000);
-    return () => clearInterval(timer);
+    }, 2500);
+    return () => clearInterval(carTimer);
+  }, []);
+
+  // Smooth rotating Toronto / Calgary / Mississauga luxury city wallpapers (every 4.5s)
+  useEffect(() => {
+    const cityTimer = setInterval(() => {
+      setCityIndex((prev) => (prev + 1) % CITY_WALLPAPERS.length);
+    }, 4500);
+    return () => clearInterval(cityTimer);
   }, []);
 
   const currentCar = FLEET_CARS[carIndex];
+  const currentCity = CITY_WALLPAPERS[cityIndex];
+
   return (
     <section id="about-details" className="py-24 bg-[var(--bg-primary)] relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Visual Column with Pop Reveal */}
           <ScrollReveal direction="left" distance={45} className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-[var(--border-subtle)] shadow-2xl h-[460px]">
-              <Image
-                src="/images/royal12/fairmont-royal-york-night.jpg"
-                alt="Royal 12 Limo Toronto Operations"
-                fill
-                sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-cover filter brightness-[0.88] contrast-[1.08] saturate-[1.15]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-transparent opacity-90" />
+            <div className="relative rounded-3xl overflow-hidden border border-[#F5A623]/30 shadow-2xl h-[470px] bg-[#060B14] group">
+              {/* Rotating High-Class City Wallpapers (Toronto, Calgary, Mississauga) */}
+              {CITY_WALLPAPERS.map((bg, idx) => (
+                <Image
+                  key={bg.city}
+                  src={bg.image}
+                  alt={bg.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  priority={idx === 0}
+                  className={`object-cover transition-all duration-1000 ease-in-out filter brightness-[0.92] contrast-[1.06] saturate-[1.12] ${
+                    idx === cityIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                  }`}
+                />
+              ))}
 
-              {/* 100% Jet Black 3-SUV Live 1-Second Rotating Showcase */}
-              <FloatingPopBadge duration={4} className="absolute bottom-4 left-4 right-4 h-48 rounded-2xl overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-card)]/95 backdrop-blur-xl shadow-2xl">
+              {/* Cinematic Luxury Vignette (Preserves rich skyline clarity in both Day & Night modes) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050A14]/95 via-[#050A14]/20 to-[#050A14]/45 pointer-events-none" />
+
+              {/* Top Badges Bar */}
+              <div className="absolute top-4 inset-x-4 flex flex-wrap items-center justify-between gap-2 z-10">
+                {/* Licensed Badge */}
+                <div className="px-3 py-1.5 rounded-full bg-black/75 border border-[#F5A623]/40 text-[11px] font-semibold text-[#F5A623] flex items-center gap-1.5 backdrop-blur-md shadow-lg">
+                  <Award className="w-3.5 h-3.5 text-[#F5A623] flex-shrink-0" />
+                  <span>Licensed in Mississauga, ON</span>
+                </div>
+
+                {/* Live City Wallpaper Pill (Clickable to cycle Toronto / Calgary / Mississauga) */}
+                <button
+                  type="button"
+                  onClick={() => setCityIndex((prev) => (prev + 1) % CITY_WALLPAPERS.length)}
+                  title="Switch City Skyline Wallpaper"
+                  className="px-3 py-1.5 rounded-full bg-black/75 hover:bg-black/90 border border-white/20 hover:border-[#F5A623]/60 text-[11px] font-semibold text-white flex items-center gap-1.5 backdrop-blur-md shadow-lg transition-all cursor-pointer"
+                >
+                  <MapPin className="w-3 h-3 text-[#F5A623]" />
+                  <span>{currentCity.city}</span>
+                </button>
+              </div>
+
+              {/* 100% Jet Black 3-SUV High-Class Live Showcase Card */}
+              <FloatingPopBadge duration={4} className="absolute bottom-4 left-4 right-4 h-56 rounded-2xl overflow-hidden border border-[#F5A623]/45 bg-[#080E1A] shadow-[0_20px_50px_rgba(0,0,0,0.75)]">
                 <div className="relative w-full h-full">
-                  <Image
-                    key={currentCar.name}
-                    src={currentCar.image}
-                    alt={currentCar.name}
-                    fill
-                    sizes="400px"
-                    className="object-contain p-2 filter brightness-[0.98] contrast-[1.08] transition-opacity duration-300"
-                  />
-                  {/* Top Badge */}
-                  <div className="absolute top-2 left-2 flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[var(--bg-primary)]/90 border border-[var(--border-subtle)] text-[10px] font-bold text-[var(--accent-gold)]">
+                  {FLEET_CARS.map((car, idx) => (
+                    <Image
+                      key={car.name}
+                      src={car.image}
+                      alt={car.name}
+                      fill
+                      sizes="450px"
+                      priority={idx === 0}
+                      className={`object-cover object-center transition-all duration-700 ease-in-out filter contrast-[1.04] saturate-[1.08] ${
+                        idx === carIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                      }`}
+                    />
+                  ))}
+
+                  {/* Subtle bottom gradient inside car card for crisp ticker legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/30 pointer-events-none" />
+
+                  {/* Top Live Badge */}
+                  <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/75 border border-[#F5A623]/40 text-[10px] font-bold text-[#F5A623] backdrop-blur-md shadow-md">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    <span>{currentCar.badge}</span>
+                    <span className="text-white">{currentCar.badge}</span>
                   </div>
 
-                  {/* Bottom live ticker */}
-                  <div className="absolute bottom-1.5 inset-x-2 flex items-center justify-between px-2.5 py-1 rounded-lg bg-black/85 backdrop-blur-md text-[10px] text-white">
-                    <span className="font-semibold text-[var(--accent-gold)] truncate max-w-[190px]">
+                  {/* Bottom live vehicle ticker & interactive switcher */}
+                  <div className="absolute bottom-2 inset-x-2 flex items-center justify-between px-3 py-1.5 rounded-xl bg-black/80 border border-white/15 backdrop-blur-md text-[11px] text-white shadow-lg">
+                    <span className="font-bold text-[#F5A623] truncate max-w-[215px]">
                       {currentCar.name}
                     </span>
-                    <div className="flex items-center gap-1">
-                      {FLEET_CARS.map((_, i) => (
-                        <span
-                          key={i}
-                          className={`h-1.5 rounded-full transition-all duration-300 ${
-                            i === carIndex ? "bg-[var(--accent-gold)] w-3" : "bg-white/40 w-1.5"
+                    <div className="flex items-center gap-1.5">
+                      {FLEET_CARS.map((car, i) => (
+                        <button
+                          key={car.name}
+                          type="button"
+                          onClick={() => setCarIndex(i)}
+                          aria-label={`Preview ${car.name}`}
+                          className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                            i === carIndex ? "bg-[#F5A623] w-4" : "bg-white/40 hover:bg-white/70 w-1.5"
                           }`}
                         />
                       ))}
-                      <span className="text-[8px] text-emerald-400 font-bold ml-1">1s</span>
+                      <span className="text-[9px] text-emerald-400 font-extrabold uppercase tracking-wider ml-1">
+                        LIVE
+                      </span>
                     </div>
                   </div>
                 </div>
               </FloatingPopBadge>
-
-              {/* Gold Badge */}
-              <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-[var(--bg-card)]/95 border border-[var(--border-subtle)] text-xs font-semibold text-[var(--accent-gold)] flex items-center gap-2 backdrop-blur-md shadow-md">
-                <Award className="w-4 h-4" />
-                <span>Licensed in Mississauga, Ontario</span>
-              </div>
             </div>
           </ScrollReveal>
 
