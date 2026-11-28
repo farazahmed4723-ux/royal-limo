@@ -458,43 +458,80 @@ html.light-mode .booking-sub-strip {
   color: #475569 !important;
 }
 
-/* Date and Time Inputs in Sub-strip */
+/* =========================================================================
+   SUB-STRIP CONTROLS (NIGHT MODE DEFAULT & DAY MODE ADAPTATION)
+   ========================================================================= */
+.booking-vehicle-select {
+  background-color: #0A1628;
+  color: #F8FAFC;
+  border: 1px solid rgba(245, 166, 35, 0.4);
+}
+.booking-vehicle-select option {
+  background-color: #0A1628;
+  color: #F8FAFC;
+}
+
+.booking-date-input,
+.booking-time-input {
+  background-color: transparent;
+  color: #F8FAFC;
+  border: 1px solid transparent;
+}
+.booking-date-input:hover,
+.booking-time-input:hover {
+  border-color: rgba(245, 166, 35, 0.3);
+}
+
+/* Date and Time Inputs in Sub-strip (Day Mode) */
 html[data-theme="day"] .booking-date-input,
 html.day .booking-date-input,
 html.light-mode .booking-date-input,
 html[data-theme="day"] .booking-time-input,
 html.day .booking-time-input,
 html.light-mode .booking-time-input,
-html[data-theme="day"] #hero-booking-console input[type="date"],
-html.day #hero-booking-console input[type="date"],
-html.light-mode #hero-booking-console input[type="date"],
-html[data-theme="day"] #hero-booking-console input[type="time"],
-html.day #hero-booking-console input[type="time"],
-html.light-mode #hero-booking-console input[type="time"] {
-  background-color: #F8F6F0 !important;
+html[data-theme="day"] #hero-booking-console .booking-date-input,
+html.day #hero-booking-console .booking-date-input,
+html.light-mode #hero-booking-console .booking-date-input,
+html[data-theme="day"] #hero-booking-console .booking-time-input,
+html.day #hero-booking-console .booking-time-input,
+html.light-mode #hero-booking-console .booking-time-input {
+  background-color: #FFFFFF !important;
   color: #0F172A !important;
-  border: 1px solid rgba(179, 142, 56, 0.35) !important;
-  border-radius: 6px !important;
-  padding: 2px 6px !important;
+  border: 1.5px solid rgba(179, 142, 56, 0.45) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  border-radius: 8px !important;
+  padding: 3px 8px !important;
 }
 
-/* Vehicle Select in Sub-strip */
+/* Vehicle Select in Sub-strip (Day Mode) */
 html[data-theme="day"] .booking-vehicle-select,
 html.day .booking-vehicle-select,
 html.light-mode .booking-vehicle-select,
-html[data-theme="day"] #hero-booking-console select,
-html.day #hero-booking-console select,
-html.light-mode #hero-booking-console select {
-  background-color: #F8F6F0 !important;
+html[data-theme="day"] #hero-booking-console .booking-vehicle-select,
+html.day #hero-booking-console .booking-vehicle-select,
+html.light-mode #hero-booking-console .booking-vehicle-select {
+  background-color: #FFFFFF !important;
   color: #0F172A !important;
-  border: 1px solid rgba(179, 142, 56, 0.45) !important;
+  border: 1.5px solid rgba(179, 142, 56, 0.5) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 8px !important;
 }
 
 html[data-theme="day"] .booking-vehicle-select option,
 html.day .booking-vehicle-select option,
-html.light-mode .booking-vehicle-select option {
+html.light-mode .booking-vehicle-select option,
+html[data-theme="day"] #hero-booking-console .booking-vehicle-select option,
+html.day #hero-booking-console .booking-vehicle-select option,
+html.light-mode #hero-booking-console .booking-vehicle-select option {
   background-color: #FFFFFF !important;
   color: #0F172A !important;
+}
+
+/* Lucide icons in sub-strip */
+html[data-theme="day"] .booking-sub-strip svg,
+html.day .booking-sub-strip svg,
+html.light-mode .booking-sub-strip svg {
+  color: #A17512 !important;
 }
 
 /* Sub-strip guarantee shield text */

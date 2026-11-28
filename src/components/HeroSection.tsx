@@ -453,31 +453,31 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
             <div className="booking-sub-strip flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-[#F5A623]/15 text-xs text-[#94A3B8]">
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-1.5">
-                  <Calendar className="w-3 h-3 text-[#F5A623]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#F5A623]" />
                   <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="booking-date-input bg-transparent text-[#F8FAFC] focus:outline-none cursor-pointer text-xs"
+                    className="booking-date-input rounded-lg px-2 py-1 text-xs focus:outline-none cursor-pointer transition-colors"
                   />
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                  <Clock className="w-3 h-3 text-[#F5A623]" />
+                  <Clock className="w-3.5 h-3.5 text-[#F5A623]" />
                   <input
                     type="time"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
-                    className="booking-time-input bg-transparent text-[#F8FAFC] focus:outline-none cursor-pointer text-xs"
+                    className="booking-time-input rounded-lg px-2 py-1 text-xs focus:outline-none cursor-pointer transition-colors"
                   />
                 </div>
 
                 <div className="flex items-center gap-1.5">
-                  <Car className="w-3 h-3 text-[#F5A623]" />
+                  <Car className="w-3.5 h-3.5 text-[#F5A623]" />
                   <select
                     value={vehicle}
                     onChange={(e) => setVehicle(e.target.value)}
-                    className="booking-vehicle-select bg-[#0A1628] border border-[#F5A623]/40 rounded-lg px-2 py-0.5 text-[#F8FAFC] font-medium text-xs focus:outline-none focus:ring-1 focus:ring-[#F5A623] cursor-pointer"
+                    className="booking-vehicle-select rounded-lg px-2.5 py-1 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-[#F5A623] cursor-pointer transition-colors shadow-sm"
                   >
                     <option value="Black Chevrolet Suburban Premier">Black Chevrolet Suburban Premier</option>
                     <option value="Black GMC Yukon Denali">Black GMC Yukon Denali</option>
@@ -487,7 +487,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
               </div>
 
               <div className="flex items-center gap-1 text-[11px] text-[#F5A623]">
-                <Shield className="w-3 h-3" />
+                <Shield className="w-3.5 h-3.5" />
                 <span>Verified Account Gate • Free 24hr Cancellation (30% within 24h)</span>
               </div>
             </div>
