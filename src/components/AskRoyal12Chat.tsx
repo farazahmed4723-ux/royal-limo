@@ -417,7 +417,7 @@ export default function AskRoyal12Chat() {
               aria-label="Chat on WhatsApp"
             >
               <WhatsAppLogo className="w-6 h-6 transition-transform group-hover:scale-110 drop-shadow-sm" />
-              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/90 px-2.5 py-1 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-lg">
+              <span className="dock-tooltip pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg px-2.5 py-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                 WhatsApp Chat
               </span>
             </a>
@@ -430,7 +430,7 @@ export default function AskRoyal12Chat() {
               aria-label="Email Dispatch"
             >
               <GmailLogo className="w-5 h-5 transition-transform group-hover:scale-110" />
-              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/90 px-2.5 py-1 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-lg">
+              <span className="dock-tooltip pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg px-2.5 py-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                 Email Dispatch
               </span>
             </a>
@@ -447,7 +447,7 @@ export default function AskRoyal12Chat() {
                 <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400" />
               </div>
-              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/90 px-2.5 py-1 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-lg">
+              <span className="dock-tooltip pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg px-2.5 py-1 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                 Call (437) 214-9283
               </span>
             </a>

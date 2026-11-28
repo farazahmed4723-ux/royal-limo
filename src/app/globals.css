@@ -501,7 +501,117 @@ html.light-mode .booking-sub-strip {
   border-color: rgba(245, 166, 35, 0.6) !important;
 }
 
-/* Date and Time Inputs in Sub-strip (Day Mode) */
+/* Tooltip Component: Light Mode & Dark Mode High-Contrast Rules */
+.dock-tooltip {
+  background-color: rgba(6, 16, 30, 0.95) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(245, 166, 35, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}
+
+html[data-theme="day"] .dock-tooltip,
+html.day .dock-tooltip,
+html.light-mode .dock-tooltip {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid rgba(179, 142, 56, 0.45) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Preserve crisp white text on all dark-background elements/badges in Day Mode */
+html[data-theme="day"] #hero-section .text-white,
+html.day #hero-section .text-white,
+html.light-mode #hero-section .text-white,
+html[data-theme="day"] [class*="bg-black"] .text-white,
+html[data-theme="day"] [class*="bg-black"].text-white,
+html.day [class*="bg-black"] .text-white,
+html.day [class*="bg-black"].text-white,
+html.light-mode [class*="bg-black"] .text-white,
+html.light-mode [class*="bg-black"].text-white,
+html[data-theme="day"] [class*="bg-black/"] .text-white,
+html[data-theme="day"] [class*="bg-black/"].text-white,
+html.day [class*="bg-black/"] .text-white,
+html.day [class*="bg-black/"].text-white,
+html.light-mode [class*="bg-black/"] .text-white,
+html.light-mode [class*="bg-black/"].text-white {
+  color: #FFFFFF !important;
+}
+
+/* Gold Button Outline in Day Mode: High Contrast without dark box */
+html[data-theme="day"] .gold-button-outline,
+html.day .gold-button-outline,
+html.light-mode .gold-button-outline {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(179, 142, 56, 0.6) !important;
+  color: #A17512 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="day"] .gold-button-outline:hover,
+html.day .gold-button-outline:hover,
+html.light-mode .gold-button-outline:hover {
+  background: #FDF9F0 !important;
+  border-color: #A17512 !important;
+  color: #785305 !important;
+}
+
+/* Global Select Options */
+html[data-theme="day"] select option,
+html.day select option,
+html.light-mode select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+html[data-theme="night"] select option,
+html:not([data-theme="day"]):not(.day):not(.light-mode) select option {
+  background-color: #0A1322 !important;
+  color: #F8FAFC !important;
+}
+
+/* Global Date & Time Inputs across all forms (Hero, QuoteEngine, BookingWidget, QuoteForm) */
+input[type="date"],
+input[type="time"],
+.booking-date-input,
+.booking-time-input {
+  color-scheme: dark !important;
+  color: #F8FAFC !important;
+}
+
+input[type="date"]::-webkit-datetime-edit,
+input[type="time"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="time"]::-webkit-datetime-edit-fields-wrapper,
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="time"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-hour-field,
+input[type="time"]::-webkit-datetime-edit-hour-field,
+input[type="date"]::-webkit-datetime-edit-minute-field,
+input[type="time"]::-webkit-datetime-edit-minute-field,
+input[type="date"]::-webkit-datetime-edit-ampm-field,
+input[type="time"]::-webkit-datetime-edit-ampm-field,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="time"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="time"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field,
+input[type="time"]::-webkit-datetime-edit-year-field {
+  color: #F8FAFC !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.85) sepia(0.5) saturate(2) hue-rotate(5deg) !important;
+  cursor: pointer;
+}
+
+/* Date and Time Inputs in Sub-strip and all forms (Day Mode) */
+html[data-theme="day"] input[type="date"],
+html[data-theme="day"] input[type="time"],
+html.day input[type="date"],
+html.day input[type="time"],
+html.light-mode input[type="date"],
+html.light-mode input[type="time"],
 html[data-theme="day"] .booking-date-input,
 html.day .booking-date-input,
 html.light-mode .booking-date-input,
@@ -515,14 +625,40 @@ html[data-theme="day"] #hero-booking-console .booking-time-input,
 html.day #hero-booking-console .booking-time-input,
 html.light-mode #hero-booking-console .booking-time-input {
   color-scheme: light !important;
-  background-color: #FFFFFF !important;
   color: #0F172A !important;
+}
+
+html[data-theme="day"] .booking-date-input,
+html.day .booking-date-input,
+html.light-mode .booking-date-input,
+html[data-theme="day"] .booking-time-input,
+html.day .booking-time-input,
+html.light-mode .booking-time-input,
+html[data-theme="day"] #hero-booking-console .booking-date-input,
+html.day #hero-booking-console .booking-date-input,
+html.light-mode #hero-booking-console .booking-date-input,
+html[data-theme="day"] #hero-booking-console .booking-time-input,
+html.day #hero-booking-console .booking-time-input,
+html.light-mode #hero-booking-console .booking-time-input {
+  background-color: #FFFFFF !important;
   border: 1.5px solid rgba(179, 142, 56, 0.5) !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
   border-radius: 8px !important;
   padding: 3px 8px !important;
 }
 
+html[data-theme="day"] input[type="date"]::-webkit-datetime-edit,
+html[data-theme="day"] input[type="time"]::-webkit-datetime-edit,
+html[data-theme="day"] input[type="date"]::-webkit-datetime-edit *,
+html[data-theme="day"] input[type="time"]::-webkit-datetime-edit *,
+html.day input[type="date"]::-webkit-datetime-edit,
+html.day input[type="time"]::-webkit-datetime-edit,
+html.day input[type="date"]::-webkit-datetime-edit *,
+html.day input[type="time"]::-webkit-datetime-edit *,
+html.light-mode input[type="date"]::-webkit-datetime-edit,
+html.light-mode input[type="time"]::-webkit-datetime-edit,
+html.light-mode input[type="date"]::-webkit-datetime-edit *,
+html.light-mode input[type="time"]::-webkit-datetime-edit *,
 html[data-theme="day"] .booking-date-input::-webkit-datetime-edit,
 html[data-theme="day"] .booking-time-input::-webkit-datetime-edit,
 html.day .booking-date-input::-webkit-datetime-edit,
@@ -535,6 +671,24 @@ html.day .booking-date-input::-webkit-datetime-edit-text,
 html.day .booking-time-input::-webkit-datetime-edit-text,
 html.light-mode .booking-date-input::-webkit-datetime-edit-text,
 html.light-mode .booking-time-input::-webkit-datetime-edit-text,
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-hour-field,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-hour-field,
+html.day .booking-date-input::-webkit-datetime-edit-hour-field,
+html.day .booking-time-input::-webkit-datetime-edit-hour-field,
+html.light-mode .booking-date-input::-webkit-datetime-edit-hour-field,
+html.light-mode .booking-time-input::-webkit-datetime-edit-hour-field,
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-minute-field,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-minute-field,
+html.day .booking-date-input::-webkit-datetime-edit-minute-field,
+html.day .booking-time-input::-webkit-datetime-edit-minute-field,
+html.light-mode .booking-date-input::-webkit-datetime-edit-minute-field,
+html.light-mode .booking-time-input::-webkit-datetime-edit-minute-field,
+html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-ampm-field,
+html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-ampm-field,
+html.day .booking-date-input::-webkit-datetime-edit-ampm-field,
+html.day .booking-time-input::-webkit-datetime-edit-ampm-field,
+html.light-mode .booking-date-input::-webkit-datetime-edit-ampm-field,
+html.light-mode .booking-time-input::-webkit-datetime-edit-ampm-field,
 html[data-theme="day"] .booking-date-input::-webkit-datetime-edit-month-field,
 html[data-theme="day"] .booking-time-input::-webkit-datetime-edit-month-field,
 html.day .booking-date-input::-webkit-datetime-edit-month-field,
@@ -556,6 +710,12 @@ html.light-mode .booking-time-input::-webkit-datetime-edit-year-field {
   color: #0F172A !important;
 }
 
+html[data-theme="day"] input[type="date"]::-webkit-calendar-picker-indicator,
+html[data-theme="day"] input[type="time"]::-webkit-calendar-picker-indicator,
+html.day input[type="date"]::-webkit-calendar-picker-indicator,
+html.day input[type="time"]::-webkit-calendar-picker-indicator,
+html.light-mode input[type="date"]::-webkit-calendar-picker-indicator,
+html.light-mode input[type="time"]::-webkit-calendar-picker-indicator,
 html[data-theme="day"] .booking-date-input::-webkit-calendar-picker-indicator,
 html[data-theme="day"] .booking-time-input::-webkit-calendar-picker-indicator,
 html.day .booking-date-input::-webkit-calendar-picker-indicator,
