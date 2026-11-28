@@ -24,7 +24,7 @@ function GmailLogo({ className = "w-4 h-4" }: { className?: string }) {
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M2 6C2 4.89543 2.89543 4 4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6Z"
-        fill="#1A2332"
+        fill="#1E293B"
       />
       <path
         d="M20 4H4C2.89543 4 2 4.89543 2 6V7.5L12 13.5L22 7.5V6C22 4.89543 21.1046 4 20 4Z"
@@ -42,6 +42,40 @@ function GmailLogo({ className = "w-4 h-4" }: { className?: string }) {
         d="M8 20H16V11.5L12 14L8 11.5V20Z"
         fill="#FBBC04"
       />
+    </svg>
+  );
+}
+
+function WhatsAppLogo({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.012 2C6.486 2 2 6.48 2 12c0 1.83.497 3.548 1.363 5.027L2 22l5.122-1.34A9.946 9.946 0 0012.012 22c5.523 0 10.009-4.48 10.009-10S17.535 2 12.012 2zm5.834 14.18c-.244.685-1.42 1.31-1.954 1.392-.515.078-1.187.11-1.907-.12-.435-.139-.99-.323-1.708-.635-3.003-1.3-4.965-4.32-5.115-4.52-.15-.2-1.22-1.624-1.22-3.097 0-1.474.774-2.197 1.05-2.496.273-.3.597-.375.797-.375.2 0 .399.002.573.01.185.01.431-.07.674.515.249.6.85 2.074.925 2.224.075.15.125.324.025.524-.1.2-.15.324-.3.5-.15.174-.316.39-.45.524-.15.15-.306.312-.132.612.174.3 1.777 2.924 3.82 4.743.682.608 1.258.8 1.683.974.425.174.811.15 1.115.105.34-.05 1.05-.43 1.2-.846.15-.417.15-.774.105-.849-.045-.075-.17-.12-.37-.22z" />
+    </svg>
+  );
+}
+
+function AiBotLogo({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="aiBotGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FFE082" />
+          <stop offset="50%" stopColor="#F5A623" />
+          <stop offset="100%" stopColor="#D48B1A" />
+        </linearGradient>
+      </defs>
+      {/* Bot Crown / Antenna */}
+      <path d="M12 2V5" stroke="url(#aiBotGold)" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="12" cy="2" r="1.5" fill="#38BDF8" />
+      {/* Bot Head */}
+      <rect x="3.5" y="5.5" width="17" height="13.5" rx="4.5" stroke="url(#aiBotGold)" strokeWidth="1.8" />
+      {/* Ears */}
+      <path d="M1.5 12H3.5M20.5 12H22.5" stroke="url(#aiBotGold)" strokeWidth="1.8" strokeLinecap="round" />
+      {/* AI Glowing Eyes */}
+      <circle cx="8.5" cy="11.5" r="1.5" fill="#38BDF8" />
+      <circle cx="15.5" cy="11.5" r="1.5" fill="#38BDF8" />
+      {/* AI Smile */}
+      <path d="M9.5 15C10.3 15.8 11.1 16 12 16C12.9 16 13.7 15.8 14.5 15" stroke="url(#aiBotGold)" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -242,29 +276,27 @@ export default function AskRoyal12Chat() {
 
   return (
     <>
-      {/* Scroll-Triggered Proactive Concierge Popover (Task 4) */}
-      {/* Triggers once per session, never interrupts active form input, uses luxury variables */}
+      {/* Scroll-Triggered Proactive Concierge Popover */}
+      {/* Positioned cleanly ABOVE the floating dock so it never collides or overlaps */}
       {showScrollPrompt && !isOpen && (
         <aside
           role="complementary"
           aria-label="Concierge Assistance"
-          className="fixed bottom-24 right-4 sm:bottom-28 sm:right-6 z-50 max-w-xs sm:max-w-sm rounded-2xl bg-[var(--bg-card)] border border-[var(--border-subtle)] p-4 shadow-[var(--shadow-luxury)] animate-in fade-in slide-in-from-bottom-3 duration-300 transition-colors"
+          className="fixed bottom-[86px] right-3 sm:bottom-[92px] sm:right-6 z-40 max-w-[320px] sm:max-w-sm rounded-2xl bg-[var(--bg-modal)]/95 border border-[var(--accent-gold)]/40 p-4 shadow-[var(--shadow-luxury)] backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-300"
         >
-          <div className="flex items-start justify-between gap-3">
+          <div className="flex items-start justify-between gap-2.5">
             <div className="flex items-start gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[var(--accent-soft)] text-[var(--accent-gold)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Sparkles className="w-4 h-4" />
+              <div className="w-9 h-9 rounded-xl bg-[var(--accent-soft)] border border-[var(--accent-gold)]/30 flex items-center justify-center flex-shrink-0">
+                <AiBotLogo className="w-5 h-5 text-[var(--accent-gold)]" />
               </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold text-[var(--text-primary)]">
-                    Royal 12 Concierge
-                  </span>
-                  <span className="text-[9px] font-bold uppercase tracking-wider bg-[var(--accent-soft)] text-[var(--accent-gold)] px-1.5 py-0.5 rounded-full border border-[var(--border-subtle)]">
-                    Live
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs font-bold text-[var(--text-primary)]">Royal 12 AI Concierge</span>
+                  <span className="text-[9px] font-black uppercase tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded-full">
+                    LIVE
                   </span>
                 </div>
-                <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-[11px] text-[var(--text-secondary)] leading-relaxed mt-1">
                   Planning executive travel or Pearson Airport livery? Sayed Kamran Ali & our dispatch team are ready to assist.
                 </p>
               </div>
@@ -273,7 +305,7 @@ export default function AskRoyal12Chat() {
             <button
               type="button"
               onClick={() => setShowScrollPrompt(false)}
-              className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-1 rounded-lg transition-colors"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-1 rounded-lg transition-colors cursor-pointer"
               aria-label="Dismiss assistance prompt"
             >
               <X className="w-4 h-4" />
@@ -287,17 +319,20 @@ export default function AskRoyal12Chat() {
                 setShowScrollPrompt(false);
                 setIsOpen(true);
               }}
-              className="px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider gold-button shadow-sm"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider gold-button shadow-sm flex items-center gap-1.5 cursor-pointer"
             >
-              Ask Concierge
+              <AiBotLogo className="w-3.5 h-3.5 text-black" />
+              <span>Ask AI Bot</span>
             </button>
 
             <a
-              href="tel:+14372149283"
-              className="text-xs font-semibold text-[var(--accent-gold)] hover:underline inline-flex items-center gap-1"
+              href="https://wa.me/14372149283?text=Hello%20Royal%20Twelve%20Limo%2C%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20chauffeur%20booking."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-semibold text-[#25D366] hover:underline inline-flex items-center gap-1"
             >
-              <Phone className="w-3 h-3" />
-              <span>Call Dispatch</span>
+              <WhatsAppLogo className="w-3.5 h-3.5" />
+              <span>WhatsApp</span>
             </a>
           </div>
         </aside>
@@ -306,91 +341,126 @@ export default function AskRoyal12Chat() {
       {/* Floating Side Dock (Visible when Chat is Closed) */}
       {!isOpen && (
         <>
-          {/* 1. Mobile View: Sleek floating bottom action bar */}
-          <div className="sm:hidden fixed bottom-3 left-3 right-3 z-50 bg-[var(--bg-modal)]/95 backdrop-blur-xl border border-[var(--border-subtle)] rounded-2xl p-2.5 shadow-[var(--shadow-luxury)] flex flex-col gap-1.5 animate-in fade-in slide-in-from-bottom-2 duration-300">
-            {/* Top Row: Direct Call and Ask Royal 12 */}
-            <div className="flex items-center gap-2">
-              <a
-                href="tel:+14372149283"
-                className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] active:scale-95 transition-transform"
-              >
-                <div className="relative">
-                  <Phone className="w-3.5 h-3.5 text-emerald-500" />
-                  <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                </div>
-                <span className="text-xs font-bold text-[var(--text-primary)] tracking-tight">+1 (437) 214-9283</span>
-              </a>
-
-              <button
-                type="button"
-                onClick={() => setIsOpen(true)}
-                className="flex items-center justify-center gap-1.5 py-2 px-3.5 rounded-xl gold-button active:scale-95 transition-transform shadow-md"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-black" />
-                <span className="text-xs font-black tracking-wide">Ask Royal 12</span>
-              </button>
-            </div>
-
-            {/* Bottom Row: Official Gmail with Logo */}
-            <a
-              href="mailto:royaltwelve.ca@gmail.com"
-              className="flex items-center justify-center gap-2 py-1.5 px-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-subtle)] active:scale-95 transition-all"
-            >
-              <GmailLogo className="w-4 h-4 flex-shrink-0" />
-              <span className="text-xs font-semibold text-[var(--accent-gold)] tracking-wide">
-                royaltwelve.ca@gmail.com
-              </span>
-            </a>
-          </div>
-
-          {/* 2. Desktop View: Floating side dock on bottom-right */}
-          <div className="hidden sm:flex flex-col items-end gap-2 fixed bottom-6 right-6 z-50">
-            {/* Gmail Pill */}
-            <a
-              href="mailto:royaltwelve.ca@gmail.com"
-              className="group flex items-center gap-2.5 px-4 py-2 rounded-full bg-[var(--bg-modal)]/95 hover:bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--accent-gold)] backdrop-blur-xl shadow-[var(--shadow-luxury)] transition-all duration-300 hover:scale-105"
-              title="Official Business Email: royaltwelve.ca@gmail.com"
-            >
-              <GmailLogo className="w-4 h-4 flex-shrink-0" />
-              <span className="text-xs font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent-gold)] transition-colors">
-                royaltwelve.ca@gmail.com
-              </span>
-            </a>
-
-            {/* Phone Pill */}
-            <a
-              href="tel:+14372149283"
-              className="group flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[var(--bg-modal)]/95 hover:bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--accent-gold)] backdrop-blur-xl shadow-[var(--shadow-luxury)] transition-all duration-300 hover:scale-105"
-              title="Direct Chauffeur Line: +1 (437) 214-9283"
-            >
-              <div className="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-500">
-                <Phone className="w-3.5 h-3.5" />
-              </div>
-              <div className="flex flex-col text-left">
-                <span className="text-[9px] text-[var(--text-secondary)] uppercase tracking-wider">24/7 Direct Chauffeur</span>
-                <span className="text-xs font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-gold)] transition-colors">
-                  +1 (437) 214-9283
-                </span>
-              </div>
-            </a>
-
-            {/* AI Agent Trigger */}
+          {/* 1. Mobile View: Unified, sleek bottom action dock */}
+          <div className="sm:hidden fixed bottom-3 left-3 right-3 z-50 p-2 rounded-2xl bg-[var(--bg-modal)]/95 backdrop-blur-2xl border border-[var(--border-subtle)] shadow-[var(--shadow-luxury)] flex items-center justify-between gap-1.5 animate-in fade-in slide-in-from-bottom-2 duration-300">
+            {/* 1. AI Bot */}
             <button
               type="button"
               onClick={() => setIsOpen(true)}
-              className="group relative flex items-center gap-3 px-5 py-3 rounded-full bg-[var(--bg-modal)] border border-[var(--border-subtle)] hover:border-[var(--accent-gold)] text-[var(--text-primary)] shadow-[var(--shadow-luxury)] transition-all duration-300 hover:scale-105 focus:outline-none"
-              aria-label="Open Ask Royal 12 Assistant"
+              className="flex-1 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-gradient-to-b from-[var(--bg-secondary)] to-[var(--bg-card)] border border-[var(--accent-gold)]/50 active:scale-95 transition-transform cursor-pointer"
             >
               <div className="relative">
-                <Sparkles className="w-5 h-5 text-[var(--accent-gold)] group-hover:rotate-12 transition-transform" />
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 border border-black animate-pulse" />
+                <AiBotLogo className="w-5 h-5 text-[var(--accent-gold)]" />
+                <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              </div>
+              <span className="text-[10px] font-black uppercase text-[var(--accent-gold)] mt-0.5 tracking-tight">AI Bot</span>
+            </button>
+
+            {/* 2. WhatsApp */}
+            <a
+              href="https://wa.me/14372149283?text=Hello%20Royal%20Twelve%20Limo%2C%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20chauffeur%20booking."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-[#0E1F18] border border-[#25D366]/40 text-[#25D366] active:scale-95 transition-transform"
+              title="Chat on WhatsApp"
+            >
+              <WhatsAppLogo className="w-5 h-5 text-[#25D366]" />
+              <span className="text-[10px] font-bold text-[#25D366] mt-0.5 tracking-tight">WhatsApp</span>
+            </a>
+
+            {/* 3. Gmail */}
+            <a
+              href="mailto:royaltwelve.ca@gmail.com"
+              className="flex-1 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-[var(--bg-card)] border border-[var(--border-subtle)] active:scale-95 transition-transform"
+              title="Email Dispatch"
+            >
+              <GmailLogo className="w-5 h-5" />
+              <span className="text-[10px] font-semibold text-[var(--text-secondary)] mt-0.5 tracking-tight">Gmail</span>
+            </a>
+
+            {/* 4. Direct Call */}
+            <a
+              href="tel:+14372149283"
+              className="flex-1 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-emerald-400 active:scale-95 transition-transform"
+              title="Call 24/7 Dispatch"
+            >
+              <div className="relative">
+                <Phone className="w-4 h-4 text-emerald-400" />
+                <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              </div>
+              <span className="text-[10px] font-bold text-[var(--text-primary)] mt-0.5 tracking-tight">Call 24/7</span>
+            </a>
+          </div>
+
+          {/* 2. Desktop View: Sleek Floating Command Dock on Bottom-Right */}
+          <div className="hidden sm:flex items-center gap-2 fixed bottom-6 right-6 z-50 p-2 rounded-full bg-[var(--bg-modal)]/95 backdrop-blur-2xl border border-[var(--border-subtle)] shadow-[var(--shadow-luxury)] ring-1 ring-white/10 transition-all duration-300">
+            {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/14372149283?text=Hello%20Royal%20Twelve%20Limo%2C%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20chauffeur%20booking."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[#0E1F18] border border-[#25D366]/40 hover:border-[#25D366] hover:bg-[#25D366] text-[#25D366] hover:text-white shadow-md hover:shadow-[0_0_15px_rgba(37,211,102,0.4)] transition-all hover:scale-105"
+              title="WhatsApp (+1 437 214-9283)"
+              aria-label="Chat on WhatsApp"
+            >
+              <WhatsAppLogo className="w-5 h-5 transition-transform group-hover:scale-110" />
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/90 px-2.5 py-1 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-lg">
+                WhatsApp Chat
+              </span>
+            </a>
+
+            {/* Official Gmail Button */}
+            <a
+              href="mailto:royaltwelve.ca@gmail.com"
+              className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)] hover:border-[#EA4335] hover:bg-[var(--bg-card)] shadow-md hover:shadow-[0_0_15px_rgba(234,67,53,0.3)] transition-all hover:scale-105"
+              title="Email: royaltwelve.ca@gmail.com"
+              aria-label="Email Dispatch"
+            >
+              <GmailLogo className="w-5 h-5 transition-transform group-hover:scale-110" />
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/90 px-2.5 py-1 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-lg">
+                Email Dispatch
+              </span>
+            </a>
+
+            {/* 24/7 Direct Call Button */}
+            <a
+              href="tel:+14372149283"
+              className="group relative flex items-center justify-center w-11 h-11 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)] hover:border-emerald-500 hover:bg-[var(--bg-card)] text-emerald-400 shadow-md hover:shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all hover:scale-105"
+              title="Call Direct Chauffeur: +1 (437) 214-9283"
+              aria-label="Call Dispatch"
+            >
+              <div className="relative">
+                <Phone className="w-4 h-4 transition-transform group-hover:rotate-12" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400" />
+              </div>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-black/90 px-2.5 py-1 text-[10px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-lg">
+                Call (437) 214-9283
+              </span>
+            </a>
+
+            {/* Divider */}
+            <div className="w-[1px] h-6 bg-[var(--border-subtle)] mx-0.5" />
+
+            {/* Stylish AI Concierge Bot Pill */}
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              className="group relative flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-[var(--bg-secondary)] via-[var(--bg-card)] to-[var(--bg-secondary)] border border-[var(--accent-gold)]/60 hover:border-[var(--accent-gold)] shadow-md hover:shadow-[0_0_20px_rgba(245,166,35,0.35)] transition-all hover:scale-105 cursor-pointer"
+              aria-label="Open Royal 12 AI Concierge Bot"
+            >
+              <div className="relative flex items-center justify-center">
+                <AiBotLogo className="w-5 h-5 text-[var(--accent-gold)] transition-transform group-hover:scale-110" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-cyan-400" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-[10px] text-emerald-500 font-bold uppercase tracking-wider flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> 24/7 AI Concierge
-                </span>
-                <span className="text-xs font-extrabold uppercase tracking-wider text-[var(--text-primary)] group-hover:text-[var(--accent-gold)] transition-colors">
-                  Ask Royal 12
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[9px] uppercase tracking-wider text-cyan-400 font-extrabold">AI Bot</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                </div>
+                <span className="text-xs font-black uppercase tracking-wider text-[var(--text-primary)] group-hover:text-[var(--accent-gold)] transition-colors">
+                  Ask Concierge
                 </span>
               </div>
             </button>
@@ -404,16 +474,21 @@ export default function AskRoyal12Chat() {
           {/* Header */}
           <div className="p-4 bg-[var(--bg-card)] border-b border-[var(--border-subtle)] flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-[var(--accent-soft)] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--accent-gold)]">
-                <Sparkles className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-[var(--accent-soft)] border border-[var(--accent-gold)]/40 flex items-center justify-center text-[var(--accent-gold)] shadow-sm">
+                <AiBotLogo className="w-6 h-6 text-[var(--accent-gold)]" />
               </div>
               <div>
-                <h4 className="font-display text-sm font-bold text-[var(--text-primary)] tracking-wide">
-                  Ask Royal 12 Concierge
-                </h4>
-                <div className="flex items-center gap-1.5 text-[10px] text-emerald-500">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Online • Owner & Dispatch Connected</span>
+                <div className="flex items-center gap-1.5">
+                  <h4 className="font-display text-sm font-extrabold text-[var(--text-primary)] tracking-wide">
+                    Royal 12 AI Concierge
+                  </h4>
+                  <span className="text-[9px] font-black uppercase tracking-wider bg-cyan-400/15 text-cyan-400 border border-cyan-400/30 px-1.5 rounded-full">
+                    AI
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-[10px] text-emerald-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Online • Sayed Kamran Ali & Dispatch Connected</span>
                 </div>
               </div>
             </div>
@@ -421,7 +496,7 @@ export default function AskRoyal12Chat() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="p-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors"
+              className="p-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors cursor-pointer"
               aria-label="Close Chat"
             >
               <X className="w-5 h-5" />
@@ -433,34 +508,43 @@ export default function AskRoyal12Chat() {
             {messages.map((m, i) => (
               <div
                 key={i}
-                className={`flex flex-col ${m.sender === "user" ? "items-end" : "items-start"
-                  }`}
+                className={`flex flex-col ${
+                  m.sender === "user" ? "items-end" : "items-start"
+                }`}
               >
-                <div
-                  className={`max-w-[88%] p-3.5 rounded-2xl leading-relaxed ${m.sender === "user"
-                    ? "bg-[var(--accent-gold)] text-black font-semibold rounded-br-none shadow-md"
-                    : "bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] rounded-bl-none shadow-md"
-                    }`}
-                >
-                  <p>{m.text}</p>
-
-                  {/* Optional Action Button inside Message */}
-                  {m.action && (
-                    <div className="mt-2.5 pt-2 border-t border-[var(--border-subtle)]">
-                      <a
-                        href={m.action.target}
-                        onClick={() => {
-                          if (m.action?.target.startsWith("/#")) {
-                            setIsOpen(false);
-                          }
-                        }}
-                        className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[var(--accent-gold)] hover:underline transition-colors"
-                      >
-                        <span>{m.action.label}</span>
-                        <span>→</span>
-                      </a>
+                <div className={`flex items-end gap-2 max-w-[92%] ${m.sender === "user" ? "flex-row-reverse" : "flex-row"}`}>
+                  {m.sender === "assistant" && (
+                    <div className="w-6 h-6 rounded-lg bg-[var(--accent-soft)] border border-[var(--accent-gold)]/40 flex items-center justify-center flex-shrink-0 mb-1">
+                      <AiBotLogo className="w-3.5 h-3.5 text-[var(--accent-gold)]" />
                     </div>
                   )}
+                  <div
+                    className={`p-3.5 rounded-2xl leading-relaxed ${
+                      m.sender === "user"
+                        ? "bg-[var(--accent-gold)] text-black font-semibold rounded-br-none shadow-md"
+                        : "bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] rounded-bl-none shadow-md"
+                    }`}
+                  >
+                    <p>{m.text}</p>
+
+                    {/* Optional Action Button inside Message */}
+                    {m.action && (
+                      <div className="mt-2.5 pt-2 border-t border-[var(--border-subtle)]">
+                        <a
+                          href={m.action.target}
+                          onClick={() => {
+                            if (m.action?.target.startsWith("/#")) {
+                              setIsOpen(false);
+                            }
+                          }}
+                          className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[var(--accent-gold)] hover:underline transition-colors"
+                        >
+                          <span>{m.action.label}</span>
+                          <span>→</span>
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <span className="text-[10px] text-[var(--text-secondary)] mt-1 px-1">
                   {m.time}
