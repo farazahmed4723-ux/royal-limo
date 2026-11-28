@@ -385,3 +385,152 @@ html.light-mode #hero-section .gold-gradient-text {
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
+
+/* =========================================================================
+   HERO QUICK-BOOKING CONSOLE & SUB-STRIP: LUXURY DAY MODE TRANSFORMATION
+   ========================================================================= */
+html[data-theme="day"] #hero-booking-console,
+html.day #hero-booking-console,
+html.light-mode #hero-booking-console,
+html[data-theme="day"] .booking-console-container,
+html.day .booking-console-container,
+html.light-mode .booking-console-container {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(179, 142, 56, 0.45) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.2), 0 0 25px rgba(179, 142, 56, 0.18) !important;
+  color: #0F172A !important;
+}
+
+/* Labels */
+html[data-theme="day"] #hero-booking-console label,
+html.day #hero-booking-console label,
+html.light-mode #hero-booking-console label {
+  color: #A17512 !important;
+}
+
+/* Text & Inputs inside booking console */
+html[data-theme="day"] #hero-booking-console .booking-input,
+html.day #hero-booking-console .booking-input,
+html.light-mode #hero-booking-console .booking-input,
+html[data-theme="day"] #hero-booking-console input[type="text"],
+html.day #hero-booking-console input[type="text"],
+html.light-mode #hero-booking-console input[type="text"] {
+  background-color: #F8F6F0 !important;
+  color: #0F172A !important;
+  border-color: rgba(179, 142, 56, 0.35) !important;
+}
+
+html[data-theme="day"] #hero-booking-console input[type="text"]::placeholder,
+html.day #hero-booking-console input[type="text"]::placeholder,
+html.light-mode #hero-booking-console input[type="text"]::placeholder {
+  color: #64748B !important;
+}
+
+/* GPS Button */
+html[data-theme="day"] .booking-gps-btn,
+html.day .booking-gps-btn,
+html.light-mode .booking-gps-btn {
+  background-color: #EFECE3 !important;
+  border-color: rgba(179, 142, 56, 0.35) !important;
+  color: #A17512 !important;
+}
+
+/* Swap Button */
+html[data-theme="day"] .booking-swap-btn,
+html.day .booking-swap-btn,
+html.light-mode .booking-swap-btn {
+  background-color: #EFECE3 !important;
+  border-color: rgba(179, 142, 56, 0.4) !important;
+  color: #A17512 !important;
+}
+html[data-theme="day"] .booking-swap-btn:hover,
+html.day .booking-swap-btn:hover,
+html.light-mode .booking-swap-btn:hover {
+  background-color: #F5A623 !important;
+  color: #000000 !important;
+}
+
+/* Sub-strip Container */
+html[data-theme="day"] .booking-sub-strip,
+html.day .booking-sub-strip,
+html.light-mode .booking-sub-strip {
+  border-top-color: rgba(179, 142, 56, 0.25) !important;
+  color: #475569 !important;
+}
+
+/* Date and Time Inputs in Sub-strip */
+html[data-theme="day"] .booking-date-input,
+html.day .booking-date-input,
+html.light-mode .booking-date-input,
+html[data-theme="day"] .booking-time-input,
+html.day .booking-time-input,
+html.light-mode .booking-time-input,
+html[data-theme="day"] #hero-booking-console input[type="date"],
+html.day #hero-booking-console input[type="date"],
+html.light-mode #hero-booking-console input[type="date"],
+html[data-theme="day"] #hero-booking-console input[type="time"],
+html.day #hero-booking-console input[type="time"],
+html.light-mode #hero-booking-console input[type="time"] {
+  background-color: #F8F6F0 !important;
+  color: #0F172A !important;
+  border: 1px solid rgba(179, 142, 56, 0.35) !important;
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+}
+
+/* Vehicle Select in Sub-strip */
+html[data-theme="day"] .booking-vehicle-select,
+html.day .booking-vehicle-select,
+html.light-mode .booking-vehicle-select,
+html[data-theme="day"] #hero-booking-console select,
+html.day #hero-booking-console select,
+html.light-mode #hero-booking-console select {
+  background-color: #F8F6F0 !important;
+  color: #0F172A !important;
+  border: 1px solid rgba(179, 142, 56, 0.45) !important;
+}
+
+html[data-theme="day"] .booking-vehicle-select option,
+html.day .booking-vehicle-select option,
+html.light-mode .booking-vehicle-select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* Sub-strip guarantee shield text */
+html[data-theme="day"] .booking-sub-strip .text-\[\#F5A623\],
+html.day .booking-sub-strip .text-\[\#F5A623\],
+html.light-mode .booking-sub-strip .text-\[\#F5A623\] {
+  color: #A17512 !important;
+}
+
+/* Popular Destinations Dropdown */
+html[data-theme="day"] .booking-dropdown-menu,
+html.day .booking-dropdown-menu,
+html.light-mode .booking-dropdown-menu {
+  background-color: #FFFFFF !important;
+  border-color: rgba(179, 142, 56, 0.35) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+html[data-theme="day"] .booking-dropdown-menu button,
+html.day .booking-dropdown-menu button,
+html.light-mode .booking-dropdown-menu button {
+  color: #1E293B !important;
+}
+
+html[data-theme="day"] .booking-dropdown-menu button:hover,
+html.day .booking-dropdown-menu button:hover,
+html.light-mode .booking-dropdown-menu button:hover {
+  background-color: #F8F6F0 !important;
+  color: #A17512 !important;
+}
+
+/* Trust Strip Below Booking Bar */
+html[data-theme="day"] .booking-trust-strip > div,
+html.day .booking-trust-strip > div,
+html.light-mode .booking-trust-strip > div {
+  color: #E2E8F0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+

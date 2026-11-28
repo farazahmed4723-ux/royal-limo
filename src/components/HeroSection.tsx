@@ -313,10 +313,11 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" id="booking-bar">
         {/* Horizontal Crystal Booking Console */}
         <motion.div
+          id="hero-booking-console"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="rounded-2xl sm:rounded-3xl bg-[#06101E]/95 border border-[#F5A623]/30 backdrop-blur-xl p-3.5 sm:p-4 lg:p-5 shadow-2xl shadow-black/95 ring-1 ring-white/10"
+          className="booking-console-container rounded-2xl sm:rounded-3xl bg-[#06101E]/95 border border-[#F5A623]/30 backdrop-blur-xl p-3.5 sm:p-4 lg:p-5 shadow-2xl shadow-black/95 ring-1 ring-white/10 transition-all duration-300"
         >
           <form onSubmit={handleSubmit} className="space-y-3">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-2.5 items-end">
@@ -334,13 +335,13 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
                     onFocus={() => setActiveInput("pickup")}
                     placeholder="Airport, Hotel, or Address"
                     required
-                    className="w-full bg-[#0A1628] border border-[#F5A623]/25 focus:border-[#F5A623] rounded-xl pl-9 pr-20 py-2 text-xs sm:text-sm text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:ring-1 focus:ring-[#F5A623] transition-all"
+                    className="booking-input w-full bg-[#0A1628] border border-[#F5A623]/25 focus:border-[#F5A623] rounded-xl pl-9 pr-20 py-2 text-xs sm:text-sm text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:ring-1 focus:ring-[#F5A623] transition-all"
                   />
                   <button
                     type="button"
                     onClick={() => handleGetLocation("pickup")}
                     disabled={isLocating}
-                    className="absolute right-2 text-[10px] text-[#F5A623] hover:text-[#FFC04D] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#06101E]/70 border border-[#F5A623]/20 cursor-pointer"
+                    className="booking-gps-btn absolute right-2 text-[10px] text-[#F5A623] hover:text-[#FFC04D] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#06101E]/70 border border-[#F5A623]/20 cursor-pointer"
                     title="Use GPS"
                   >
                     <Navigation className="w-2.5 h-2.5" />
@@ -350,7 +351,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
 
                 {/* Popular Dropdown for Pickup */}
                 {activeInput === "pickup" && !pickup && (
-                  <div className="absolute top-full left-0 right-0 z-30 mt-1 bg-[#06101E] border border-[#F5A623]/30 rounded-xl shadow-2xl p-2 max-h-48 overflow-y-auto">
+                  <div className="booking-dropdown-menu absolute top-full left-0 right-0 z-30 mt-1 bg-[#06101E] border border-[#F5A623]/30 rounded-xl shadow-2xl p-2 max-h-48 overflow-y-auto">
                     <div className="text-[10px] uppercase tracking-wider text-[#94A3B8] px-2 py-1 font-semibold">
                       Popular GTA Pickup Spots
                     </div>
@@ -377,7 +378,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
                 <button
                   type="button"
                   onClick={handleSwap}
-                  className="w-7 h-7 rounded-full bg-[#0A1628] border border-[#F5A623]/30 text-[#F5A623] hover:bg-[#F5A623] hover:text-black flex items-center justify-center transition-all cursor-pointer shadow-md"
+                  className="booking-swap-btn w-7 h-7 rounded-full bg-[#0A1628] border border-[#F5A623]/30 text-[#F5A623] hover:bg-[#F5A623] hover:text-black flex items-center justify-center transition-all cursor-pointer shadow-md"
                   title="Swap Pickup & Dropoff"
                 >
                   <ArrowDownUp className="w-3 h-3" />
@@ -398,13 +399,13 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
                     onFocus={() => setActiveInput("dropoff")}
                     placeholder="Airport, Hotel, or Destination"
                     required
-                    className="w-full bg-[#0A1628] border border-[#F5A623]/25 focus:border-[#F5A623] rounded-xl pl-9 pr-20 py-2 text-xs sm:text-sm text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:ring-1 focus:ring-[#F5A623] transition-all"
+                    className="booking-input w-full bg-[#0A1628] border border-[#F5A623]/25 focus:border-[#F5A623] rounded-xl pl-9 pr-20 py-2 text-xs sm:text-sm text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:ring-1 focus:ring-[#F5A623] transition-all"
                   />
                   <button
                     type="button"
                     onClick={() => handleGetLocation("dropoff")}
                     disabled={isLocating}
-                    className="absolute right-2 text-[10px] text-[#F5A623] hover:text-[#FFC04D] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#06101E]/70 border border-[#F5A623]/20 cursor-pointer"
+                    className="booking-gps-btn absolute right-2 text-[10px] text-[#F5A623] hover:text-[#FFC04D] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#06101E]/70 border border-[#F5A623]/20 cursor-pointer"
                     title="Use GPS"
                   >
                     <Navigation className="w-2.5 h-2.5" />
@@ -414,7 +415,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
 
                 {/* Popular Dropdown for Dropoff */}
                 {activeInput === "dropoff" && !dropoff && (
-                  <div className="absolute top-full left-0 right-0 z-30 mt-1 bg-[#06101E] border border-[#F5A623]/30 rounded-xl shadow-2xl p-2 max-h-48 overflow-y-auto">
+                  <div className="booking-dropdown-menu absolute top-full left-0 right-0 z-30 mt-1 bg-[#06101E] border border-[#F5A623]/30 rounded-xl shadow-2xl p-2 max-h-48 overflow-y-auto">
                     <div className="text-[10px] uppercase tracking-wider text-[#94A3B8] px-2 py-1 font-semibold">
                       Popular GTA Destinations
                     </div>
@@ -449,7 +450,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
             </div>
 
             {/* Quick date, time & fleet sub-strip */}
-            <div className="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-[#F5A623]/15 text-xs text-[#94A3B8]">
+            <div className="booking-sub-strip flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-[#F5A623]/15 text-xs text-[#94A3B8]">
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-1.5">
                   <Calendar className="w-3 h-3 text-[#F5A623]" />
@@ -457,7 +458,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="bg-transparent text-[#F8FAFC] focus:outline-none cursor-pointer text-xs"
+                    className="booking-date-input bg-transparent text-[#F8FAFC] focus:outline-none cursor-pointer text-xs"
                   />
                 </div>
 
@@ -467,7 +468,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
                     type="time"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
-                    className="bg-transparent text-[#F8FAFC] focus:outline-none cursor-pointer text-xs"
+                    className="booking-time-input bg-transparent text-[#F8FAFC] focus:outline-none cursor-pointer text-xs"
                   />
                 </div>
 
@@ -476,7 +477,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
                   <select
                     value={vehicle}
                     onChange={(e) => setVehicle(e.target.value)}
-                    className="bg-[#0A1628] border border-[#F5A623]/40 rounded-lg px-2 py-0.5 text-[#F8FAFC] font-medium text-xs focus:outline-none focus:ring-1 focus:ring-[#F5A623] cursor-pointer"
+                    className="booking-vehicle-select bg-[#0A1628] border border-[#F5A623]/40 rounded-lg px-2 py-0.5 text-[#F8FAFC] font-medium text-xs focus:outline-none focus:ring-1 focus:ring-[#F5A623] cursor-pointer"
                   >
                     <option value="Black Chevrolet Suburban Premier">Black Chevrolet Suburban Premier</option>
                     <option value="Black GMC Yukon Denali">Black GMC Yukon Denali</option>
@@ -494,7 +495,7 @@ export default function HeroSection({ onFindRide }: HeroSectionProps) {
         </motion.div>
 
         {/* Trust Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 pt-3 max-w-4xl mx-auto text-center">
+        <div className="booking-trust-strip grid grid-cols-2 md:grid-cols-4 gap-2 pt-3 max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-[#CBD5E1]">
             <Shield className="w-3 h-3 text-[#F5A623]" />
             <span>100% Commercial Policy</span>
